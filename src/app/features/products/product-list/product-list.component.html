@@ -1,0 +1,38 @@
+
+ <div class="item-listing__tools">
+    <select class="form-control" name="" id="" (change)="sort($event)">
+        <option value="1">Featured</option>
+        <option value="Low" >Price low to high</option>
+        <option value="High">Price high to low</option>
+        <option value="Name">Name</option>
+    </select>
+    <a class="action-btn" href="#">
+        <i class="fas fa-plus"></i>
+    </a>
+</div>
+<!-- <p>product-list works!</p> -->
+<div class="item-listing__items item-listing--3items">
+
+    <!-- <app-product-item   (itembed)="onItem($event)" *ngFor="let item of productArray ; index as i"  [productItem]="productArray[i]" class="item-medium-1">
+
+    </app-product-item> -->
+    <app-product-item   *ngFor="let item of productArray ; index as i"  [productItem]="productArray[i]" class="item-medium-1">
+
+    </app-product-item>
+   
+</div>
+
+<div class="paging">
+    <!-- left arrow -->
+    <div class="paging__arrow">
+        <i class="fas fa-angle-left"></i>
+    </div>
+    <!-- page number -->
+    <div class="paging__number active">1</div>
+    <div class="paging__number">2</div>
+    <div class="paging__number">3</div>
+    <!-- right arrow -->
+    <div class="paging__arrow">
+        <i class="fas fa-angle-right"></i>
+    </div>
+</div>

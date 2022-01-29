@@ -1,0 +1,159 @@
+<!-- <p>header works!</p> -->
+<!-- <header> -->
+    <!-- Navbar -->
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarExample01"
+          aria-controls="navbarExample01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarExample01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav> -->
+    <!-- Navbar -->
+  
+    <!-- Background image -->
+    <!-- <div
+      class="p-5 text-center bg-image"
+      style="
+        background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/041.webp');
+        height: 400px;
+      "
+    >
+      <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+        <div class="d-flex justify-content-center align-items-center h-100">
+          <div class="text-white">
+            <h1 class="mb-3">Heading</h1>
+            <h4 class="mb-3">Subheading</h4>
+            <a class="btn btn-outline-light btn-lg" href="#!" role="button"
+            >Call to action</a
+            > -->
+          <!-- </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- Background image -->
+  <!-- </header> -->
+<!-- <h2>aya gamal</h2> -->
+<!-- <img [src]="image[c]" /><br>
+<button (click)="start()">start</button>
+<button (click)="stop()">stop</button>
+<div>
+  <input type="text" [(ngModel)]="title">{{title}}
+</div>
+
+<div style="margin-top:10px;">
+  <ul *ngFor="let car of cars">
+    <li>{{car}}</li>
+  </ul>
+</div>
+<h2>odd</h2>
+<div style="margin-top:10px;">
+  <ul *ngFor="let car of cars; odd as i" >
+    <li *ngIf="i">{{car}}</li>
+  </ul>
+</div>
+
+<h2>event</h2>
+<div style="margin-top:10px;">
+  <ul *ngFor="let car of cars; even as i" >
+    <li *ngIf="i">{{car|uppercase}}</li>
+  </ul>
+</div>
+<div>
+  {{2.678 | number:'3.4-5'}}
+</div>
+<div>
+  {{date|date:'shortDate'}} -->
+  <!-- {{date|date:'shortTime'}}
+</div>
+<div>
+  <input type="text" placeholder="Please Enter Id" [(ngModel)]="data.id"/>
+  <input type="text" placeholder="Please Enter Name" [(ngModel)]="data.name"/>
+  <input type="text" placeholder="Please Enter Age" [(ngModel)]="data.age"/>
+  <button (click)="saveData()">AddData</button>
+</div>
+<table class="table table-dark table-hover" style="width:50%; margin: 50px;">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Delete</th>
+      <th>update</th>
+    </tr>
+  </thead>
+  <tbody> -->
+    <!-- <tr *ngFor="let s of std">
+      <td>{{s.id}}</td>
+      <td>{{s.name}}</td>
+      <td>{{s.age}}</td>  
+   <td><button (click)="DeleteEelement(s.id)">Delete</button></td> 
+   <td> <button (click)="update(s.id)">update</button> </td>
+     </tr>   
+  </tbody>
+</table> -->
+
+
+ <img src="../../assets/1.jpg"/> 
+
+ <!-- <img [attr.src]="'../../assets/1.jpg'"/> -->
+
+
+<div class="defualt" [ngClass]="{'activeclass':active}">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, quam? Recusandae qui voluptatibus quo nostrum modi laborum molestiae quae cupiditate iusto, expedita adipisci minus facilis minima nesciunt repellat, ea quod!
+</div>
+
+<div [ngStyle]="{'fontSize.px':24}">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, quam? Recusandae qui voluptatibus quo nostrum modi laborum molestiae quae cupiditate iusto, expedita adipisci minus facilis minima nesciunt repellat, ea quod!
+</div>
+
+<div *ngIf="active ; else elseblock">
+  div active 
+</div>
+
+<!-- <div #elseblock>
+ not div active 
+</div> -->
+<ng-template #elseblock>
+  not div active  else 
+</ng-template>
+<!-- template ref -->
+
+<div #devEx>
+  test dev
+</div>
+<div>
+  {{devEx.innerText+' clone'}}
+</div>
+<div #testEleRef id="testId">
+div selectory
+</div>
+<div class="testclass" #testclass>
+testclass
+</div>
+<div class="testclass" #testclass>
+  testclass 2
+  </div>

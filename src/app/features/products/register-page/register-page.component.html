@@ -1,0 +1,39 @@
+<div class="container">
+    <form class="login" #regiser=ngForm>
+        <h4 class="login__header">
+            Register An Account
+        </h4>
+        <div class="form-group" [ngClass]="{'invalid':email.invalid && email.touched }">
+            <label for="">E-mail Address</label>
+            <input #email='ngModel' required ngModel class="form-control" type="text" name="email" id="">
+        </div>
+        <div class="form-row">
+            <div class="form-group" [ngClass]="{'invalid':pass.invalid && pass.touched }"> 
+                <label for="">Password</label>
+                <input #pass='ngModel' required ngModel class="form-control" type="text" name="pass" id="">
+            </div>
+            <div class="form-group" [ngClass]="{'invalid':res.invalid && res.touched }">
+                <label for="">Re-enter Password</label>
+                <input #res='ngModel' required ngModel class="form-control" type="text" name="re" id="">
+                <span *ngIf="res!=pass">password not match </span>
+            </div>
+        </div>
+
+        <div class="login__remember-me">
+            <div class="add-product__actions">
+                <button href="#" class="btn btn--gray" routerLink="/home">Cancel</button>
+                <button href="#" class="btn btn--primary"routerLink="/home" [disabled]="!regiser.valid">Register</button>
+            </div>
+        </div>
+        <a href="#" class="login__register-now">You are alredy a member?</a>
+    </form>
+</div>
+<!-- footer -->
+<div class="footer">
+    <!-- subscription -->
+    <div></div>
+    <!-- menu -->
+    <div></div>
+    <!-- contact info -->
+    <div></div>
+</div>
