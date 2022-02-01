@@ -1,13 +1,13 @@
 <!-- <p>product-item works!</p> -->
 
     <div class="item-medium-1__alert"*ngIf="productItem.discount">Sale</div>
-    <!-- <div class="item-medium-1__image image" [style]="'background-image:url(' + productItem.imagesUrls[0] + ')'"> -->
-        <div class="item-medium-1__image image" [style]="'background-image:url(' + productItem.imageUrl + ')'">
+    <div class="item-medium-1__image image" [style]="'background-image:url(' + productItem.imagesUrls[0] + ')'">
+        <!-- <div class="item-medium-1__image image" [style]="'background-image:url(' + productItem.imageUrl + ')'"> -->
         <!-- <a href="#" class="item-medium-1__action">Add to Cart</a> -->
         <a  (click)="onAddToCart()"   class="item-medium-1__action" [innerHtml]="'Add to Cart'"></a>
     </div>
-    <!-- <a [routerLink]="'/product-details/'+productItem.id"> -->
-   <a [routerLink]="'/product-details/'+productItem._id">
+    <a [routerLink]="'/product/details/'+productItem._id">
+   <!-- <a [routerLink]="'product/details'"> -->
         <h4 >{{productItem.data[0].name}}</h4>
         <div class="flex-row">
             <div>

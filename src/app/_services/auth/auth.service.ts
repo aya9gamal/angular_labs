@@ -2,27 +2,25 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-interface Person{
-  person:{
-    _id:string;
-    email:string;
-    password:string;
+interface Person {
+  person: {
+    _id: string;
+    email: string;
+    password: string;
     __v: 0;
-    id:string;
+    id: string;
   };
-    token:string
-  }
+  token: string
+}
+
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
+  constructor(private httpClient: HttpClient) { }
 
-  constructor(private httpClient:HttpClient) {
-
-   }
-   login(body:any):Observable<Person>{
-    //  this.httpClient.post(environment.baseUrl+'user/login')
-return this.httpClient.post<Person>(environment.baseUrl+'user/login',body);
-   }
+  login(body: any): Observable<Person> {
+    return this.httpClient.post<Person>(environment.baseUrl + 'user/login', body);
+  }
 }

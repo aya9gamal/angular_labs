@@ -12,7 +12,8 @@ export class ProductDetailsComponent implements OnInit {
    constructor(private activateRouter:ActivatedRoute,private productservice:ProductService) { }
   // constructor(private productservice:ProductService) { }
   // @Input() 
-product !:product[];
+product !:product;
+relatedProductsArray!:product[];
   ngOnInit(): void {  
   //  this.productservice.itemAdd.subscribe(
   //    (next)=>{
@@ -21,25 +22,33 @@ product !:product[];
   //    }
   //  )
   
-  let id=this.activateRouter.snapshot.params;
-
+ //let id=this.activateRouter.snapshot.params['productId'];
+// console.log(this.activateRouter.queryParams.subscribe());
   //  console.log(this.activateRouter.snapshot)
-   console.log(id);
-  //  if(id){
-   this.getProductBYID(+id);
-  //  console.log(d);
-  //  }
-  //  console.log(id);
-  }
-getProductBYID(id:number){
-  // this.productservice.getProductById(id).subscribe(
-  //   (res)=>{
-  //     console.log(res);
-  //     this.product=res;
-  //   }
-  // )
-  let d=this.productservice.getProductById(id);
-  console.log(d);
-}
+  this.activateRouter.params.subscribe(
+    (params)=>{
+      console.log(params);
+      const id = params['productId'];
+      if(id){
+        this.getProductById(id)
+        this.getAllProducts();
+      }
+      
+    }
+  )
+      
+    }
+    getProductById(id:string){
+      this.productservice.getProductById(id).subscribe(
+        (res)=>{this.product=res;}
+      )
+    }
+    getAllProducts(){
+      this.productservice.getAllproducts().subscribe(
+        (res)=>{
+    this.relatedProductsArray=res.product.splice(0,6);
+        }
+      )
+    }
 
 }

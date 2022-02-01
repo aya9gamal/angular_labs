@@ -9,9 +9,9 @@ export interface product{
     data:ProductLang[],
     price:number,
     discount ?:number,
-    imageUrl:string,
-    // imagesUrls:string[],
-    count:1,
+    // imageUrl:string,
+    imagesUrls:string[],
+    // count:1,
     category:Category,
     paymentTypes:PaymentType[],
     tages:Tag[];

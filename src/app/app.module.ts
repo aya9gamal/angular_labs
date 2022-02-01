@@ -19,6 +19,7 @@ import { AddProductComponent } from './features/products/add-product/add-product
 import { AboutUsComponent } from './features/products/about-us/about-us.component';
 import { LoginInComponent } from './features/products/login-in/login-in.component';
 import { RegisterPageComponent } from './features/products/register-page/register-page.component';
+import { ProductAddComponent } from './features/products/product-add/product-add.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { RegisterPageComponent } from './features/products/register-page/registe
     AboutUsComponent,
     LoginInComponent,
     RegisterPageComponent,
+    ProductAddComponent,
   
   ],
   imports: [

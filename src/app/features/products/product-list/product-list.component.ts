@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { product } from 'src/app/models/product.model';
+import { AuthService } from 'src/app/_services/auth/auth.service';
 import { ProductService } from 'src/app/_services/product-service';
 
 @Component({
@@ -112,25 +113,40 @@ productArray!:product[];
 @Output()
 productEMd:EventEmitter<product>=new EventEmitter<product>();
 // new way
-productServices=new ProductService();
+// productServices=new ProductService();
 
-  constructor() { }
-// constructor(private productservice:ProductService){}
+  // constructor() { }
+constructor(private productservice:ProductService,private auth:AuthService){}
   ngOnInit():void {   
-   this.productArray=this.productServices.getAllproducts();
-  //  this.getall();
+  //  this.productArray=this.productServices.getAllproducts();
+   this.getall();
   }
   
-// getall(){
-//   this.productservice.getAllproducts().subscribe(
-//     (res)=>{
-//       this.productArray=res.product;
-//     },
-//     (err)=>{},
-//     ()=>{}
-//   )
-// }
+getall(){
+  this.productservice.getAllproducts().subscribe(
+    (res)=>{
+      this.productArray=res.product;
+    },
+    (err)=>{
+      console.log("error");
+    },
+    ()=>{}
+  );
+  const user = {
+    email: 'teesthamaada@hamada.com',
+    password: '12345678',
+  }
+  this.auth.login(user).subscribe(
+    (res)=>{
+      localStorage.setItem('token', res.token)
+    }
+  )
+}
+// this.auth.login().sub
 
+// const user={
+//   email:'teesth'
+// }
   onItem(product:product){
     // console.log(product);    
     this.productEMd.emit(product);
